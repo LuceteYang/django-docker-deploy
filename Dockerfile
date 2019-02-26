@@ -12,6 +12,6 @@ RUN pip install -r /code/requirements/production.txt
 
 ADD . /code	
 
-CMD python manage.py makemigrations --settings=config.settings.production && python manage.py migrate --settings=config.settings.production
+RUN ["chmod", "+x", "start.sh"]
 
-CMD gunicorn -b 0.0.0.0:8000 --env DJANGO_SETTINGS_MODULE=config.settings.production deploy_test.wsgi:application
+ENTRYPOINT ["sh","./start.sh"]

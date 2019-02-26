@@ -4,6 +4,8 @@ from .base import env
 # GENERAL
 # ------------------------------------------------------------------------------
 # https://docs.djangoproject.com/en/dev/ref/settings/#secret-key
+DEBUG = False
+
 SECRET_KEY = env('DJANGO_SECRET_KEY')
 # https://docs.djangoproject.com/en/dev/ref/settings/#allowed-hosts
 ALLOWED_HOSTS = ["*"]
@@ -112,6 +114,7 @@ CACHES = {
 # endregion
 # DEFAULT_FILE_STORAGE = 'config.settings.production.MediaRootS3Boto3Storage'
 # MEDIA_URL = f'https://{AWS_STORAGE_BUCKET_NAME}.s3.amazonaws.com/media/'
+MEDIA_URL = 'http://localhost/media/'
 
 # TEMPLATES
 # ------------------------------------------------------------------------------
